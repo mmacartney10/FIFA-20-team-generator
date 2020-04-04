@@ -12,3 +12,7 @@ export interface Player {
   position: string;
   rating: string;
 }
+
+export interface Filter {
+  league: string;
+}

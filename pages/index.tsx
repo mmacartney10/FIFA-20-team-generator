@@ -1,30 +1,17 @@
 import { useEffect, useState } from 'react';
 import ApiUtil from 'utils/api-util';
-
+import { Player } from 'interfaces/players-interfaces';
 import Team from 'components/Team/Team';
+import Filter from 'components/Filter/Filter';
 
 const Home = () => {
 
-  const [ listOfLeagues, setListOfLeagues ] = useState<string[]>([]);
-
-  useEffect(() => {
-
-    ApiUtil().apiGet('/api/filter-options').then(setListOfLeagues);
-
-  }, []);
-
-  const RenderLeagueList = () => (
-    <ul>
-      {listOfLeagues.map(league => (
-        <li key={league}>{league}</li>
-      ))}
-    </ul>
-  );
+  const [ team, setTeam ] = useState<Player[]>([]);
 
   return (
     <div>
-      <p>This is the home page</p>
-      <Team />
+      <Filter setTeam={setTeam} />
+      <Team team={team} />
     </div>
   );
 }

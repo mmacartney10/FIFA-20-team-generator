@@ -3,7 +3,9 @@ import PlayerMapper from 'mappers/player-mapper';
 
 export default (request, response) => {
 
-  const data = PlayerMapper(playerData).getListOfLeagues();
+  const leagues = PlayerMapper.getListOfLeagues(playerData);
 
-  response.status(200).json(data);
+  response.status(200).json({
+    leagues: leagues
+  });
 };
