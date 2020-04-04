@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT"
+  },
+  "engines": {
+    "node": "10"
   },
   "keywords": [],
-  "author": "",
+  "author": "Matthew Macartney",
   "license": "ISC",
   "dependencies": {
     "next": "^9.3.4",

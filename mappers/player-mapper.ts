@@ -23,8 +23,6 @@ export default (playerData: Player[]): PlayerMapper => {
     const randomIndex = generateRandomNumber(0, playersInPosition.length - 1);
     const player = playersInPosition[randomIndex];
 
-    console.log('player', player);
-
     return player;
   }
 

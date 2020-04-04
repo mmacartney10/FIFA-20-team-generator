@@ -1,5 +1,6 @@
 .team {
-
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .team__row {
