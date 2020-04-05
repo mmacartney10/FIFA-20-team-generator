@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import ApiUtil from 'utils/api-util';
+import { useState } from 'react';
 import { Player } from 'interfaces/players-interfaces';
 import Team from 'components/Team/Team';
 import Filter from 'components/Filter/Filter';

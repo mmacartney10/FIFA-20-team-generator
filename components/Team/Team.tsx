@@ -19,8 +19,8 @@ const Team = ({ team }: Props) => {
       <div className={styles.player__body}>
         <h1 className={styles.player__name}>{player.name || 'Test'}</h1>
         <div className={styles.player__leagueTeam}>
-          <p className={styles.player__text}>{player.league || 'Test'}</p>
-          <p className={styles.player__league}>{player.team || 'Test'}</p>
+          <p className={styles.player__text}>{player.team || 'Test'}</p>
+          <p className={styles.player__league}>{player.league || 'Test'}</p>
         </div>
       </div>
     </div>

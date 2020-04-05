@@ -15,4 +15,5 @@ export interface Player {
 
 export interface Filter {
   league: string;
+  formation: string;
 }

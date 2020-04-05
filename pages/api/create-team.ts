@@ -1,26 +1,47 @@
 import playerData from 'data/player-data.json';
-import { Player, Filter } from 'interfaces/players-interfaces';
+import Formations from 'data/formations';
+import { Player, Position } from 'interfaces/players-interfaces';
 import PlayerMapper from 'mappers/player-mapper';
+
+const getFormation = {
+  '4-4-2': [
+    'ST',
+    'ST',
+    'LM',
+    'CM',
+    'CM',
+    'RM',
+    'LB',
+    'CB',
+    'CB',
+    'RB',
+    'GK'
+  ],
+  '4-3-3': [
+    'LW',
+    'ST',
+    'RW',
+    'CM',
+    'CM',
+    'CM',
+    'LB',
+    'CB',
+    'CB',
+    'RB',
+    'GK'
+  ]
+}
 
 export default (request, response) => {
 
   const filterOptions = request.body;
 
   const filteredPlayerData = PlayerMapper.filterPlayers(playerData, filterOptions);
+  const formation = Formations[filterOptions.formation] ?? Formations['4-4-2'];
 
-  const data: Player[] = [
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'ST'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'ST'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'LM'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'CM'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'CM'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'RM'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'LB'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'CB'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'CB'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'RB'),
-    PlayerMapper.getRandomPlayer(filteredPlayerData, 'GK')
-  ]
+  let data: Player[] = [];
+
+  formation.forEach((position: Position) => data.push(PlayerMapper.getRandomPlayer(filteredPlayerData, position)))
 
   response.status(200).json(data);
 };

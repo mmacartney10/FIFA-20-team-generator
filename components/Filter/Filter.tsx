@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import ApiUtil from 'utils/api-util';
-// import { Player } from 'interfaces/players-interfaces';
+import ApiUrls from 'data/api-urls';
 
 const defaultFilter = {
-  leagues: []
+  leagues: [],
+  formations: []
 }
 
 interface Props {
@@ -14,17 +15,15 @@ const Team = ({ setTeam }: Props) => {
 
   const [ filter, setFilter ] = useState(defaultFilter)
   const [ league, seLeague ] = useState('All');
+  const [ formation, setFormation ] = useState('4-4-2');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log('handleSubmit');
-
-    ApiUtil().apiPost('/api/create-team', {league: league}).then(setTeam);
-
+    ApiUtil().apiPost(ApiUrls.createTeam, { league, formation }).then(setTeam);
   }
 
   useEffect(() => {
-    ApiUtil().apiGet('/api/filter-options').then(setFilter);
+    ApiUtil().apiGet(ApiUrls.filterOptions).then(setFilter);
   }, []);
 
   return (
@@ -37,8 +36,17 @@ const Team = ({ setTeam }: Props) => {
           <label htmlFor="league">League</label>
           <select id="cars" onChange={(event) => seLeague(event.target.value)}>
             <option value="all">All</option>
-            {filter.leagues.map(league => (
-              <option value={league} key={league}>{league}</option>
+            {filter.leagues.map(_league => (
+              <option value={_league} key={_league}>{_league}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="league">Formation</label>
+          <select id="cars" onChange={(event) => setFormation(event.target.value)}>
+            {filter.formations.map(_formation => (
+              <option value={_formation} key={_formation}>{_formation}</option>
             ))}
           </select>
         </div>
