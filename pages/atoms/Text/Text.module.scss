@@ -1,0 +1,46 @@
+@import 'pages/variables.scss';
+
+.text {
+  display: block;
+  margin: 0 0 $spacing-S;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.textBody {
+  font: $font-body;
+}
+
+.textHeading {
+  font: $font-heading;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--dark {
+  color: $c-green-dark;
+}
+
+.text--light {
+  color: $c-white;
+}
+
+.text--s {
+  font-size: $text-S;
+}
+
+.text--m {
+  font-size: $text-M;
+}
+
+.text--l {
+  font-size: $text-L;
+}
+
+.text--xl {
+  font-size: $text-XL;
+}

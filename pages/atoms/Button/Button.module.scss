@@ -1,0 +1,18 @@
+@import 'pages/variables.scss';
+
+.button {
+  background-color: $c-white;
+  font: $font-body;
+  padding: $spacing-S $spacing-M;
+  margin: 0 auto;
+  border: 0;
+  display: block;
+  appearance: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    background-color: $c-green-light;
+    outline: 0;
+  }
+}

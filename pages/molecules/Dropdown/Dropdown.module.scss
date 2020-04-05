@@ -1,0 +1,32 @@
+@import 'pages/variables.scss';
+
+.dropdown {
+  background-color: $c-green;
+  padding: $spacing-M;
+  border-radius: $border-radius-small;
+  margin: 0 auto $spacing-L;
+
+  &:last-child {
+    margin: 0 auto;
+  }
+}
+
+.dropdown__container {
+  position: relative;
+}
+
+.dropdown__icon {
+  position: absolute;
+  top: 50%;
+  right: $spacing-S;
+  transform: translate(0, -50%);
+}
+
+.dropdown__select {
+  background-color: $c-green-light;
+  width: 100%;
+  padding: $spacing-M $spacing-XL $spacing-M $spacing-M;
+  border: 0;
+  appearance: none;
+  font: $font-body;
+}

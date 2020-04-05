@@ -1,0 +1,26 @@
+$c-white:           #FFFFFF;
+$c-green-dark:      #263A3A;
+$c-green:           #314747;
+$c-green-light:     #D6D4AF;
+$c-gradient-yellow: linear-gradient(to bottom right, #F8D94C, #EFB225);
+
+$text-S: 12px;
+$text-M:  16px;
+$text-L:  20px;
+$text-XL: 24px;
+
+$spacing-XS: 4px;
+$spacing-S:  8px;
+$spacing-M:  16px;
+$spacing-L:  24px;
+$spacing-XL: 32px;
+
+$line-height: 1.2;
+$font: "system";
+$font-heading: normal 300 #{$text-M}/#{$line-height} $font;
+$font-body: normal 500 #{$text-L}/#{$line-height} $font;
+
+$border-radius-small: 5px;
+$border-radius: 10px;
+
+$transition: all 0.3s;

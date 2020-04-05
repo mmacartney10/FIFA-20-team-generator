@@ -1,0 +1,36 @@
+@import 'pages/variables.scss';
+
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+body {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.wrapper {
+  background-color: $c-white;
+  padding: $spacing-M;
+}
+
+.wrapper--green {
+  background-color: $c-green-dark;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
