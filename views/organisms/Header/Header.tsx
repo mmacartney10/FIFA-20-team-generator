@@ -1,6 +1,6 @@
-import { Text } from 'pages/atoms';
+import { Text } from 'views/atoms';
 
-export const Header =  () => {
+export const Header = () => {
 
   return (
     <header className="wrapper">

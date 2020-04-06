@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Player } from 'interfaces/players-interfaces';
-import { Header, Filter, Formations } from 'pages/organisms';
+import { Header, Filter, Formations } from 'views/organisms';
 
 const Home = () => {
 

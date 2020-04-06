@@ -1,8 +1,8 @@
 import { useEffect, useState, FormEvent } from 'react';
 import ApiUtil from 'utils/api-util';
 import ApiUrls from 'data/api-urls';
-import { Text, Button } from 'pages/atoms';
-import { Dropdown } from 'pages/molecules';
+import { Text, Button } from 'views/atoms';
+import { Dropdown } from 'views/molecules';
 import styles from './Filter.module.scss';
 
 const defaultFilter = {
@@ -14,7 +14,7 @@ interface Props {
   setTeam: (value: any) => any;
 }
 
-export const Filter =  ({ setTeam }: Props) => {
+export const Filter = ({ setTeam }: Props) => {
 
   const [ filter, setFilter ] = useState(defaultFilter)
   const [ league, setLeague ] = useState('All');

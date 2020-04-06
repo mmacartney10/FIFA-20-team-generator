@@ -1,5 +1,5 @@
 import styles from './Dropdown.module.scss';
-import { Text, Icon } from 'pages/atoms';
+import { Text, Icon } from 'views/atoms';
 
 interface Props {
   name: string;
@@ -8,7 +8,7 @@ interface Props {
   defaultValue?: string;
 }
 
-export const Dropdown =  ({ name, values, setValue, defaultValue }: Props) => {
+export const Dropdown = ({ name, values, setValue, defaultValue }: Props) => {
 
   return (
     <div className={styles.dropdown}>
@@ -16,7 +16,7 @@ export const Dropdown =  ({ name, values, setValue, defaultValue }: Props) => {
       <div className={styles.dropdown__container}>
         <select id={name} name={name} onChange={(event) => setValue(event.target.value)} className={styles.dropdown__select}>
           {defaultValue && <option value={defaultValue}>{defaultValue}</option>}
-          {values.map(value => (
+          {values && values.map(value => (
             <option value={value} key={value}>{value}</option>
           ))}
         </select>

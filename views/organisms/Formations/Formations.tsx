@@ -1,13 +1,13 @@
 import { Player } from 'interfaces/players-interfaces';
-import { Text } from 'pages/atoms';
-import { PlayerCard } from 'pages/molecules';
+import { Text } from 'views/atoms';
+import { PlayerCard } from 'views/molecules';
 import styles from './Formations.module.scss';
 
 interface Props {
   team: Player[];
 }
 
-export const Formations = ({ team }: Props) => {
+export const Formations = ({ team = [] }: Props) => {
 
   if (team.length === 0) {
     return null;

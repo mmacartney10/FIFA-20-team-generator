@@ -1,5 +1,5 @@
 import { Player } from 'interfaces/players-interfaces';
-import { Text } from 'pages/atoms';
+import { Text } from 'views/atoms';
 import styles from './PlayerCard.module.scss';
 
 interface Props {
