@@ -17,3 +17,10 @@ export interface Filter {
   league: string;
   formation: string;
 }
+
+export interface Team {
+  attack: Player[],
+  midfield: Player[],
+  defence: Player[],
+  goalkeeper: Player[]
+}

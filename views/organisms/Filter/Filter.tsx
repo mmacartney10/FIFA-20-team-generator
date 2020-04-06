@@ -12,13 +12,15 @@ const defaultFilter = {
 
 interface Props {
   setTeam: (value: any) => any;
+  league: string;
+  setLeague: Function;
+  formation: string;
+  setFormation: Function;
 }
 
-export const Filter = ({ setTeam }: Props) => {
+export const Filter = ({ setTeam, league, setLeague, formation, setFormation }: Props) => {
 
   const [ filter, setFilter ] = useState(defaultFilter)
-  const [ league, setLeague ] = useState('All');
-  const [ formation, setFormation ] = useState('4-4-2');
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();

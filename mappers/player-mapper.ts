@@ -2,7 +2,7 @@ import { Player, Position, Filter } from 'interfaces/players-interfaces';
 import SortUtil from 'utils/sort-util';
 
 interface PlayerMapper {
-  filterPlayers: (playerData: Player[], filterOptions: Filter) => Player[];
+  filterPlayers: (playerData: Player[], league: string) => Player[];
   getListOfLeagues: (playerData: Player[]) => string[];
   getRandomPlayer: (playerData: Player[], position: Position) => Player;
 }
@@ -20,10 +20,10 @@ const generateRandomNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const filterPlayers = (playerData: Player[], filterOptions: Filter) => {
+const filterPlayers = (playerData: Player[], league: string) => {
 
-  if (filterOptions.league.toLowerCase() !== 'all') {
-    return playerData.filter(x => x.league === filterOptions.league);
+  if (league.toString().toLowerCase() !== 'all') {
+    return playerData.filter(x => x.league === league);
   }
 
   return [...playerData];

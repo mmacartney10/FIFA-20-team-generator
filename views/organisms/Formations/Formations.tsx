@@ -1,15 +1,24 @@
-import { Player } from 'interfaces/players-interfaces';
+import { Player, Team } from 'interfaces/players-interfaces';
 import { Text } from 'views/atoms';
 import { PlayerCard } from 'views/molecules';
 import styles from './Formations.module.scss';
 
 interface Props {
-  team: Player[];
+  team: Team;
 }
 
-export const Formations = ({ team = [] }: Props) => {
+export const Formations = ({ team }: Props) => {
 
-  if (team.length === 0) {
+  const noAttack = team.attack.length === 0;
+  const noMidfield = team.midfield.length === 0;
+  const noDefence = team.defence.length === 0;
+  const noGoalkeeper = team.goalkeeper.length === 0;
+
+  const getPlayer = (player: Player) => (
+    <PlayerCard player={player}/>
+  );
+
+  if (noAttack || noMidfield || noDefence || noGoalkeeper) {
     return null;
   }
 
@@ -22,8 +31,7 @@ export const Formations = ({ team = [] }: Props) => {
         </div>
 
         <div className={styles.formationBody}>
-          <PlayerCard player={team[0]}/>
-          <PlayerCard player={team[1]}/>
+          {team.attack.map(getPlayer)}
         </div>
 
         <div className={styles.formationHead}>
@@ -31,10 +39,7 @@ export const Formations = ({ team = [] }: Props) => {
         </div>
 
         <div className={styles.formationBody}>
-          <PlayerCard player={team[2]}/>
-          <PlayerCard player={team[3]}/>
-          <PlayerCard player={team[4]}/>
-          <PlayerCard player={team[5]}/>
+          {team.midfield.map(getPlayer)}
         </div>
 
         <div className={styles.formationHead}>
@@ -42,10 +47,7 @@ export const Formations = ({ team = [] }: Props) => {
         </div>
 
         <div className={styles.formationBody}>
-          <PlayerCard player={team[6]}/>
-          <PlayerCard player={team[7]}/>
-          <PlayerCard player={team[8]}/>
-          <PlayerCard player={team[9]}/>
+          {team.defence.map(getPlayer)}
         </div>
 
         <div className={styles.formationHead}>
@@ -53,7 +55,7 @@ export const Formations = ({ team = [] }: Props) => {
         </div>
 
         <div className={styles.formationBody}>
-          <PlayerCard player={team[10]}/>
+          {team.goalkeeper.map(getPlayer)}
         </div>
 
       </div>

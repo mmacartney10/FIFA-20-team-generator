@@ -1,5 +1,5 @@
 import PlayerMapper, { defaultPlayer } from 'mappers/player-mapper';
-import { Player, Filter } from 'interfaces/players-interfaces';
+import { Player } from 'interfaces/players-interfaces';
 
 const testData: Player[] = [
   {
@@ -22,20 +22,14 @@ const testData: Player[] = [
 
 test('When all leagues filter option is passed all players should be returned', () => {
 
-  const filterOptions: Filter = {
-    league: 'all',
-    formation: '4-4-2'
-  }
+  const league = 'all';
 
-  expect(PlayerMapper.filterPlayers(testData, filterOptions)).toStrictEqual(testData);
+  expect(PlayerMapper.filterPlayers(testData, league)).toStrictEqual(testData);
 });
 
 test('When one league is passed the players only in that league should be returned', () => {
 
-  const filterOptions: Filter = {
-    league: 'ENG 1',
-    formation: '4-4-2'
-  }
+  const league = 'ENG 1'
 
   const expectedData = [{
     image: '',
@@ -46,7 +40,7 @@ test('When one league is passed the players only in that league should be return
     rating: '89'
   }]
 
-  expect(PlayerMapper.filterPlayers(testData, filterOptions)).toStrictEqual(expectedData);
+  expect(PlayerMapper.filterPlayers(testData, league)).toStrictEqual(expectedData);
 });
 
 
