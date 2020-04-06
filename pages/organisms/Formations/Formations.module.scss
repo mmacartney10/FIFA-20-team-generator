@@ -1,0 +1,23 @@
+@import 'pages/variables.scss';
+
+.formationHead {
+  background-color: $c-green;
+  padding: $spacing-M;
+  margin: 0 0 $spacing-M;
+  border-radius: $border-radius;
+}
+
+.formationBody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $spacing-M;
+  margin: 0 0 $spacing-M;
+
+  @include respond-to-min($bp-small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond-to-min($bp-medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

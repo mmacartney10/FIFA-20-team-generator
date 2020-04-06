@@ -4,12 +4,11 @@ $c-green:           #314747;
 $c-green-light:     #D6D4AF;
 $c-gradient-yellow: linear-gradient(to bottom right, #F8D94C, #EFB225);
 
-$text-S: 12px;
+$text-S:  12px;
 $text-M:  16px;
 $text-L:  20px;
 $text-XL: 24px;
 
-$spacing-XS: 4px;
 $spacing-S:  8px;
 $spacing-M:  16px;
 $spacing-L:  24px;
@@ -24,3 +23,13 @@ $border-radius-small: 5px;
 $border-radius: 10px;
 
 $transition: all 0.3s;
+
+$bp-small:  540px;
+$bp-medium: 840px;
+$bp-large:  1040px;
+
+@mixin respond-to-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}

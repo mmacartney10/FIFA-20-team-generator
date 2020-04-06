@@ -27,10 +27,6 @@ fieldset {
 }
 
 .inner {
-  max-width: 900px;
+  max-width: $bp-large;
   margin: 0 auto;
-}
-
-.hidden {
-  display: none;
 }

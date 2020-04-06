@@ -3,6 +3,7 @@ import ApiUtil from 'utils/api-util';
 import ApiUrls from 'data/api-urls';
 import { Text, Button } from 'pages/atoms';
 import { Dropdown } from 'pages/molecules';
+import styles from './Filter.module.scss';
 
 const defaultFilter = {
   leagues: [],
@@ -34,8 +35,9 @@ export const Filter =  ({ setTeam }: Props) => {
 
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <legend className="hidden">Create new team</legend>
-            <Text colour="light" type="heading" size="l" level={2}>Create new team</Text>
+            <legend className={styles.filterTitle}>
+              <Text colour="light" type="heading" size="l" level={2}>Create new team</Text>
+            </legend>
             <Dropdown defaultValue="all" name="League" setValue={setLeague} values={filter.leagues} />
             <Dropdown name="Formation" setValue={setFormation} values={filter.formations} />
             <Button>Generate team</Button>

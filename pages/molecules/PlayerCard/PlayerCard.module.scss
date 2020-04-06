@@ -1,0 +1,45 @@
+@import 'pages/variables.scss';
+
+$stats-width: 30px;
+
+.card {
+  background-color: $c-white;
+  border-radius: $border-radius-small 0 $border-radius-small $border-radius-small;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card__header {
+  display: flex;
+  flex: 1;
+}
+
+.card__imageContainer {
+  background: $c-gradient-yellow;
+  flex: 1;
+}
+
+.card__image {
+  width: calc(100% - #{$stats-width});
+  min-width: 100%;
+  display: block;
+  margin: $spacing-M auto 0;
+}
+
+.card__stats {
+  background-color: $c-green;
+  width: $stats-width;
+  padding: $spacing-S;
+  text-align: center;
+}
+
+.card__name {
+  background-color: $c-green-dark;
+  padding: $spacing-S;
+}
+
+.card__body {
+  padding: $spacing-S;
+}
