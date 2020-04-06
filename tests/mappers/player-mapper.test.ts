@@ -1,5 +1,5 @@
 import PlayerMapper, { defaultPlayer } from 'mappers/player-mapper';
-import { Player } from 'interfaces/players-interfaces';
+import { Player, Formations } from 'interfaces/players-interfaces';
 
 const testData: Player[] = [
   {
@@ -50,6 +50,30 @@ test('When getListOfLeagues is called all the leagues should be returned in an a
 
   expect(PlayerMapper.getListOfLeagues(testData)).toStrictEqual(expectedData);
 });
+
+test('When getListOfFormations is called all the formations should be returned in an array', () => {
+
+  const formations: Formations = {
+    '3-1-4-2': {
+      attack: [ 'ST', 'ST' ],
+      midfield: [ 'LM', 'CM', 'CDM', 'CM', 'RM' ],
+      defence: [ 'CB', 'CB', 'CB' ],
+      goalkeeper: [ 'GK' ]
+    },
+    '3-4-1-2': {
+      attack: [ 'ST', 'ST' ],
+      midfield: [ 'LM', 'CM', 'CAM', 'CM', 'RM' ],
+      defence: [ 'CB', 'CB', 'CB' ],
+      goalkeeper: [ 'GK' ]
+    }
+  };
+
+  const expectedData = ['3-1-4-2', '3-4-1-2'];
+
+  expect(PlayerMapper.getListOfFormations(formations)).toStrictEqual(expectedData);
+});
+
+
 
 test('When getRandomPlayer is called a single player should be returned in the position passed', () => {
 

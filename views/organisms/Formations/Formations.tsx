@@ -15,7 +15,7 @@ export const Formations = ({ team }: Props) => {
   const noGoalkeeper = team.goalkeeper.length === 0;
 
   const getPlayer = (player: Player) => (
-    <PlayerCard player={player}/>
+    <PlayerCard player={player} key={player.name} />
   );
 
   if (noAttack || noMidfield || noDefence || noGoalkeeper) {

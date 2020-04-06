@@ -18,6 +18,8 @@ $stats-width: 30px;
 
 .card__imageContainer {
   background: $c-gradient-yellow;
+  padding-top: calc(100% - #{$stats-width});
+  position: relative;
   flex: 1;
 }
 
@@ -26,6 +28,9 @@ $stats-width: 30px;
   min-width: 100%;
   display: block;
   margin: $spacing-M auto 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .card__stats {

@@ -1,9 +1,10 @@
-import { Player, Position, Filter } from 'interfaces/players-interfaces';
+import { Player, Position, Formations } from 'interfaces/players-interfaces';
 import SortUtil from 'utils/sort-util';
 
 interface PlayerMapper {
   filterPlayers: (playerData: Player[], league: string) => Player[];
   getListOfLeagues: (playerData: Player[]) => string[];
+  getListOfFormations: (formations: Formations) => string[];
   getRandomPlayer: (playerData: Player[], position: Position) => Player;
 }
 
@@ -34,6 +35,10 @@ const getListOfLeagues = (playerData: Player[]) => {
   return SortUtil().sortAlphabetically(listOfLeagues);
 }
 
+const getListOfFormations = (formations: Formations) => {
+  return Object.keys(formations);
+}
+
 const getRandomPlayer = (playerData: Player[], position: Position) => {
 
   const playersInPosition = playerData.filter((player: Player) => player.position === position);
@@ -50,6 +55,7 @@ const getRandomPlayer = (playerData: Player[], position: Position) => {
 const playerMapper: PlayerMapper = {
   filterPlayers,
   getListOfLeagues,
+  getListOfFormations,
   getRandomPlayer
 };
 

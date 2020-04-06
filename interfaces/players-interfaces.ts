@@ -23,4 +23,15 @@ export interface Team {
   midfield: Player[],
   defence: Player[],
   goalkeeper: Player[]
+};
+
+export interface Formation {
+  attack: Position[],
+  midfield: Position[],
+  defence: Position[],
+  goalkeeper: Position[]
+}
+
+export interface Formations {
+  [name: string]: Formation;
 }
