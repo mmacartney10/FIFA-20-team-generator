@@ -22,13 +22,11 @@ const generateRandomNumber = (min: number, max: number) => {
 
 const filterPlayers = (playerData: Player[], filterOptions: Filter) => {
 
-  let data = [...playerData];
-
-  if (filterOptions.league !== 'all') {
-    data = playerData.filter(x => x.league === filterOptions.league)
+  if (filterOptions.league.toLowerCase() !== 'all') {
+    return playerData.filter(x => x.league === filterOptions.league);
   }
 
-  return data;
+  return [...playerData];
 }
 
 const getListOfLeagues = (playerData: Player[]) => {

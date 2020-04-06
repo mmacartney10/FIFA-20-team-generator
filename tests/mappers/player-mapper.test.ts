@@ -23,7 +23,8 @@ const testData: Player[] = [
 test('When all leagues filter option is passed all players should be returned', () => {
 
   const filterOptions: Filter = {
-    league: 'all'
+    league: 'all',
+    formation: '4-4-2'
   }
 
   expect(PlayerMapper.filterPlayers(testData, filterOptions)).toStrictEqual(testData);
@@ -32,7 +33,8 @@ test('When all leagues filter option is passed all players should be returned', 
 test('When one league is passed the players only in that league should be returned', () => {
 
   const filterOptions: Filter = {
-    league: 'ENG 1'
+    league: 'ENG 1',
+    formation: '4-4-2'
   }
 
   const expectedData = [{

@@ -3,35 +3,6 @@ import Formations from 'data/formations';
 import { Player, Position } from 'interfaces/players-interfaces';
 import PlayerMapper from 'mappers/player-mapper';
 
-const getFormation = {
-  '4-4-2': [
-    'ST',
-    'ST',
-    'LM',
-    'CM',
-    'CM',
-    'RM',
-    'LB',
-    'CB',
-    'CB',
-    'RB',
-    'GK'
-  ],
-  '4-3-3': [
-    'LW',
-    'ST',
-    'RW',
-    'CM',
-    'CM',
-    'CM',
-    'LB',
-    'CB',
-    'CB',
-    'RB',
-    'GK'
-  ]
-}
-
 export default (request, response) => {
 
   const filterOptions = request.body;
