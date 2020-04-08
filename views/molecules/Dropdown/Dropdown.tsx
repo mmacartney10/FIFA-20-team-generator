@@ -12,7 +12,7 @@ export const Dropdown = ({ name, values, setValue, defaultValue }: Props) => {
 
   return (
     <div className={styles.dropdown}>
-      <Text type="label" colour="light">{name}</Text>
+      <Text type="label" colour="light" htmlFor={name}>{name}</Text>
       <div className={styles.dropdown__container}>
         <select id={name} name={name} onChange={(event) => setValue(event.target.value)} className={styles.dropdown__select}>
           {defaultValue && <option value={defaultValue}>{defaultValue}</option>}

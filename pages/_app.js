@@ -1,5 +1,7 @@
-import 'pages/styles.scss'
+import 'pages/styles.scss';
 
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Component {...pageProps} />
+  )
 }

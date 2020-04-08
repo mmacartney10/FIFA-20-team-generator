@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Team } from 'interfaces/players-interfaces';
 import { Header, Filter, Formations } from 'views/organisms';
+import Meta  from 'views/Meta';
 
 const defaultTeam = {
   attack: [],
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <div>
+      <Meta title="Fifa 20 Team Generator" description="A site that generates a random team from a league and formation" />
       <Header />
       <Filter setTeam={setTeam} league={league} setLeague={setLeague} formation={formation} setFormation={setFormation} />
       <Formations team={team} />

@@ -7,11 +7,12 @@ interface Props {
   size?: 's' | 'm' | 'l' | 'xl';
   colour: 'dark' | 'light';
   center?: boolean;
+  htmlFor?: string;
   children: ReactNode;
 }
 
 
-export const Text = ({ colour, level = 1, size, type, children, center = false }: Props) => {
+export const Text = ({ colour, level = 1, size, type, children, center = false, htmlFor }: Props) => {
 
   const getSize = () => {
 
@@ -79,7 +80,7 @@ export const Text = ({ colour, level = 1, size, type, children, center = false }
 
   if (type === 'label') {
     return (
-      <label className={getClassNames()}>{children}</label>
+      <label className={getClassNames()} htmlFor={htmlFor}>{children}</label>
     );
   }
 
