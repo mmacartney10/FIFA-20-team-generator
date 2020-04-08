@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+// import { ReactNode } from 'react';
+import * as React from 'react';
 import styles from './Text.module.scss';
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
   colour: 'dark' | 'light';
   center?: boolean;
   htmlFor?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 

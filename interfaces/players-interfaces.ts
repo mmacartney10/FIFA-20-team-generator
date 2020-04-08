@@ -22,14 +22,16 @@ export interface Team {
   attack: Player[],
   midfield: Player[],
   defence: Player[],
-  goalkeeper: Player[]
+  goalkeeper: Player[],
+  subs: Player[]
 };
 
 export interface Formation {
   attack: Position[],
   midfield: Position[],
   defence: Position[],
-  goalkeeper: Position[]
+  goalkeeper: Position[],
+  subs: Position[]
 }
 
 export interface Formations {

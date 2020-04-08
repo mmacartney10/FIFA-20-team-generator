@@ -58,6 +58,14 @@ export const Formations = ({ team }: Props) => {
           {team.goalkeeper.map(getPlayer)}
         </div>
 
+        <div className={styles.formationHead}>
+          <Text colour="light" type="heading" size="xl" level={2}>Subs</Text>
+        </div>
+
+        <div className={styles.formationBody}>
+          {team.subs.map(getPlayer)}
+        </div>
+
       </div>
     </header>
   );

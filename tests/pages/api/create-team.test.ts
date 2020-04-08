@@ -61,6 +61,14 @@ test('When the filter options all and 4-4-2 are selected it should create that t
     ],
     goalkeeper: [
       {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'GK',rating:'94'}
+    ],
+    subs: [
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'GK',rating:'94'},
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'CB',rating:'94'},
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'CB',rating:'94'},
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'CM',rating:'94'},
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'CM',rating:'94'},
+      {image:'',name:'Lionel Messi',team:'FC Barcelona',league:'ESP 1',position:'ST',rating:'94'}
     ]
   }
 

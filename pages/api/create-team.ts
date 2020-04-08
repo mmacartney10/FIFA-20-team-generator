@@ -10,13 +10,14 @@ export const getPlayers = (positions: Position[], data: Player[]): Player[] => {
 export const createTeam = (league: string, formation: string, _playerData: Player[]): Team => {
 
   const filteredPlayerData = PlayerMapper.filterPlayers(_playerData, league);
-  const { attack, midfield, defence, goalkeeper } = Formations[formation] ?? Formations['4-4-2'];
+  const { attack, midfield, defence, goalkeeper, subs } = Formations[formation] ?? Formations['4-4-2'];
 
   return {
     attack: getPlayers(attack, filteredPlayerData),
     midfield: getPlayers(midfield, filteredPlayerData),
     defence: getPlayers(defence, filteredPlayerData),
-    goalkeeper: getPlayers(goalkeeper, filteredPlayerData)
+    goalkeeper: getPlayers(goalkeeper, filteredPlayerData),
+    subs: getPlayers(subs, filteredPlayerData)
   }
 }
 

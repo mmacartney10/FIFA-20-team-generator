@@ -7,7 +7,8 @@ const defaultTeam = {
   attack: [],
   midfield: [],
   defence: [],
-  goalkeeper: []
+  goalkeeper: [],
+  subs: []
 }
 
 const Home = () => {
